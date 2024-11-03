@@ -1,0 +1,14 @@
+body {
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.ant-app > .ant-layout {
+  min-height: 100vh;
+}
+
+.ant-form.ant-form-vertical .ant-form-item:last-child {
+  margin-bottom: 0;
+}
