@@ -1,6 +1,5 @@
 import { ClearOutlined, SearchOutlined } from "@ant-design/icons";
 import { useQuery } from "@tanstack/react-query";
-import { debug } from "anka-dev";
 import { Button, Card, Col, Form, Row, Space, Table, theme } from "antd";
 import React from "react";
 
@@ -18,8 +17,8 @@ function DataTable({
       return fetch(uri)
         .then((res) => res.json())
         .then((res) => {
-          debug(res);
           return res;
+          O;
         });
     },
   });

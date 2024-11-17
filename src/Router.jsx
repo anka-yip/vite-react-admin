@@ -18,6 +18,7 @@ import {
   SettingOutlined,
 } from "@ant-design/icons";
 import HomePage from "./pages/HomePage";
+import { defaultTheme } from "./hooks/useEndeavour";
 
 const createMenuItem = ({ path, label, icon }) => ({
   key: path,
@@ -31,14 +32,6 @@ const MENU_ITEMS = [
   { path: "/settlements", label: "Settlements", icon: <BankOutlined /> },
   { path: "/settings", label: "Settings", icon: <SettingOutlined /> },
 ];
-
-const THEME_CONFIG = {
-  token: {
-    fontFamily: "'IBM Plex Sans',Inter",
-    padding: 16,
-  },
-  algorithm: [theme.darkAlgorithm, theme.compactAlgorithm],
-};
 
 const MainLayout = () => {
   const { token } = theme.useToken();
@@ -117,7 +110,7 @@ function Router() {
       <Routes>
         <Route
           element={
-            <ConfigProvider theme={THEME_CONFIG}>
+            <ConfigProvider theme={defaultTheme}>
               <App>
                 <Layout>
                   <Outlet />

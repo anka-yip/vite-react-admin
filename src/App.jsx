@@ -1,6 +1,7 @@
 import React from "react";
 import Router from "./router";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import withAuthentication from "./components/withAuthentication";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -18,4 +19,4 @@ function App() {
   );
 }
 
-export default App;
+export default withAuthentication(App);
