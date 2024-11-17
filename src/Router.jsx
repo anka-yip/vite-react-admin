@@ -10,7 +10,6 @@ import {
 } from "antd";
 import React from "react";
 import { BrowserRouter, Link, Outlet, Route, Routes } from "react-router-dom";
-import Login from "./components/Login";
 import {
   BankOutlined,
   DollarCircleOutlined,
@@ -37,53 +36,44 @@ const MainLayout = () => {
   const { token } = theme.useToken();
 
   return (
-    <Layout hasSider>
-      <Layout.Sider
-        style={{
-          overflow: "auto",
-          height: "100vh",
-          position: "fixed",
-          insetInlineStart: 0,
-          top: 0,
-          bottom: 0,
-        }}
-      >
-        <Menu theme="dark" items={MENU_ITEMS.map(createMenuItem)} />
-      </Layout.Sider>
+    <Layout>
+      <Layout.Header>Hello</Layout.Header>
       <Layout>
-        <Layout.Content
-          style={{
-            marginInlineStart: 200,
-            padding: token.padding,
-          }}
-        >
-          <Outlet />
-        </Layout.Content>
-        <Layout.Footer
-          style={{
-            marginInlineStart: 200,
-          }}
-        >
-          Powered by ANKA
-        </Layout.Footer>
+        <Layout hasSider>
+          <Layout.Sider
+            style={{
+              overflow: "auto",
+              height: "100vh",
+              position: "fixed",
+              insetInlineStart: 0,
+              top: 0,
+              bottom: 0,
+            }}
+          >
+            <Menu theme="dark" items={MENU_ITEMS.map(createMenuItem)} />
+          </Layout.Sider>
+          <Layout>
+            <Layout.Content
+              style={{
+                marginInlineStart: 200,
+                padding: token.padding,
+              }}
+            >
+              <Outlet />
+            </Layout.Content>
+            <Layout.Footer
+              style={{
+                marginInlineStart: 200,
+              }}
+            >
+              Powered by ANKA
+            </Layout.Footer>
+          </Layout>
+        </Layout>
       </Layout>
     </Layout>
   );
 };
-
-const LoginLayout = () => (
-  <Row
-    justify="center"
-    align="middle"
-    style={{
-      minHeight: "100vh",
-    }}
-  >
-    <Col span={6}>
-      <Login />
-    </Col>
-  </Row>
-);
 
 const NotFoundPage = () => (
   <Row
@@ -119,7 +109,6 @@ function Router() {
             </ConfigProvider>
           }
         >
-          <Route path="/login" element={<LoginLayout />} />
           <Route element={<MainLayout />}>
             <Route index element={<HomePage />} />
           </Route>

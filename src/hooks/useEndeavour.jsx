@@ -1,5 +1,6 @@
 import { FontSizeOutlined } from "@ant-design/icons";
 import { theme } from "antd";
+import axios from "axios";
 
 const defaultTheme = {
   token: {
@@ -10,10 +11,12 @@ const defaultTheme = {
   algorithm: [theme.darkAlgorithm],
 };
 
+const instance = axios.create();
+
 function useEndeavour() {
   return {};
 }
 
 export default useEndeavour;
 
-export { defaultTheme };
+export { defaultTheme, instance };

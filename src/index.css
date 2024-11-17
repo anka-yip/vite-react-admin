@@ -13,3 +13,7 @@ body {
 .ant-form.ant-form-vertical .ant-form-item:last-child {
   margin-bottom: 0;
 }
+
+.anticon-spin {
+  animation-duration: 0.3s;
+}
