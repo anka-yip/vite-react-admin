@@ -11,7 +11,12 @@ const defaultTheme = {
   algorithm: [theme.darkAlgorithm],
 };
 
-const instance = axios.create();
+const instance = axios.create({
+  headers: {
+    "Content-Type": "application/json",
+    Authorization: `Bearer ${localStorage.getItem("access_token")}`,
+  },
+});
 
 function useEndeavour() {
   return {};

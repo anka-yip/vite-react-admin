@@ -40,7 +40,7 @@ function withAuthentication(WrappedComponent) {
       setTimeout(() => {
         setLoading(false);
         setAuthenticated(true);
-      }, 2000);
+      }, 500);
     };
 
     useEffect(() => {
@@ -49,7 +49,7 @@ function withAuthentication(WrappedComponent) {
         setChecking(true);
         setTimeout(() => {
           setChecking(false);
-        }, 2000);
+        }, 500);
       };
       auth();
     }, []);

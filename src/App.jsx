@@ -1,5 +1,5 @@
 import React from "react";
-import Router from "./router";
+import Router from "./Router";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import withAuthentication from "./components/withAuthentication";
 
