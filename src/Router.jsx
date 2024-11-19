@@ -1,22 +1,7 @@
-import {
-  App,
-  Col,
-  ConfigProvider,
-  Layout,
-  Menu,
-  Result,
-  Row,
-  theme,
-} from "antd";
+import { App, ConfigProvider, Layout, Menu, theme } from "antd";
 import React, { useEffect, useState } from "react";
 import { BrowserRouter, Link, Outlet, Route, Routes } from "react-router-dom";
-import {
-  BankOutlined,
-  DollarCircleOutlined,
-  HomeOutlined,
-  SettingOutlined,
-} from "@ant-design/icons";
-import HomePage from "./pages/HomePage";
+import { MENU_ITEMS, NAVIGATION } from "./hooks/useConfig";
 import { defaultTheme } from "./hooks/useEndeavour";
 
 const createMenuItem = ({ path, label, icon }) => ({
@@ -24,64 +9,6 @@ const createMenuItem = ({ path, label, icon }) => ({
   label: <Link to={path}>{label}</Link>,
   icon,
 });
-
-// Placeholder components for routes that don't have implementations yet
-const PlaceholderPage = ({ title }) => (
-  <div>
-    <h1>{title}</h1>
-    <p>This page is under construction</p>
-  </div>
-);
-
-const NotFoundPage = () => (
-  <Row
-    style={{
-      minHeight: "100vh",
-    }}
-    justify="center"
-    align="middle"
-  >
-    <Col span={24}>
-      <Result
-        status="404"
-        title="404"
-        subTitle="Sorry, page not found"
-        extra={<Link to="/">Back Home</Link>}
-      />
-    </Col>
-  </Row>
-);
-
-const NAVIGATION = [
-  {
-    path: "/",
-    label: "Home",
-    icon: <HomeOutlined />,
-    element: <HomePage />,
-  },
-  {
-    path: "/payments",
-    label: "Payments",
-    icon: <DollarCircleOutlined />,
-    element: <PlaceholderPage title="Payments" />,
-  },
-  {
-    path: "/settlements",
-    label: "Settlements",
-    icon: <BankOutlined />,
-    element: <PlaceholderPage title="Settlements" />,
-  },
-  {
-    path: "/settings",
-    label: "Settings",
-    icon: <SettingOutlined />,
-    element: <PlaceholderPage title="Settings" />,
-  },
-  { path: "*", element: <NotFoundPage /> },
-];
-
-// Filter navigation items that should appear in menu
-const MENU_ITEMS = NAVIGATION.filter((item) => item.label);
 
 const MainLayout = () => {
   const { token } = theme.useToken();

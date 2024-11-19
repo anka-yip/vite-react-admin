@@ -1,12 +1,14 @@
 import { Col, Row, Table } from "antd";
 import React from "react";
 import DataTable from "../components/DataTable";
+import { instance } from "../hooks/useConfig";
 
 function HomePage() {
   return (
     <Row>
       <Col span={24}>
         <DataTable
+          instance={instance}
           uri={`https://api.sampleapis.com/bitcoin/historical_prices`}
           tableBordered
           tableColumns={[
