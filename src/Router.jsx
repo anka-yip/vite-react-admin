@@ -23,21 +23,12 @@ const MainLayout = () => {
       <Layout.Header>Hello</Layout.Header>
       <Layout>
         <Layout hasSider>
-          <Layout.Sider
-            style={{
-              overflow: "auto",
-              position: "fixed",
-              insetInlineStart: 0,
-              top: headerHeight,
-              bottom: 0,
-            }}
-          >
+          <Layout.Sider>
             <Menu theme="dark" items={MENU_ITEMS.map(createMenuItem)} />
           </Layout.Sider>
           <Layout>
             <Layout.Content
               style={{
-                marginInlineStart: 200,
                 padding: token.padding,
               }}
             >
