@@ -9,8 +9,8 @@ import {
   Row,
 } from "antd";
 import { useEffect, useState } from "react";
-import { defaultTheme } from "../hooks/useEndeavour";
 import { LoadingOutlined, LoginOutlined } from "@ant-design/icons";
+import { defaultTheme } from "../hooks/useConfig";
 
 const Container = ({ children, contentStyle }) => {
   return (
@@ -80,13 +80,13 @@ function withAuthentication(WrappedComponent) {
             <Col span={8}>
               <Card title="Restricted Area">
                 <Form layout="vertical" onFinish={onFinish}>
-                  <Form.Item>
+                  <Form.Item label="Username">
                     <Input autoFocus placeholder="Username" />
                   </Form.Item>
-                  <Form.Item>
+                  <Form.Item label="Password">
                     <Input placeholder="Password" />
                   </Form.Item>
-                  <Form.Item>
+                  <Form.Item label="Google Authenticator">
                     <Input placeholder="Google Authenticator" />
                   </Form.Item>
                   <Form.Item>

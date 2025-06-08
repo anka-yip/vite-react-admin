@@ -1,8 +1,7 @@
 import { App, ConfigProvider, Layout, Menu, theme } from "antd";
 import React, { useEffect, useState } from "react";
 import { BrowserRouter, Link, Outlet, Route, Routes } from "react-router-dom";
-import { MENU_ITEMS, NAVIGATION } from "./hooks/useConfig";
-import { defaultTheme } from "./hooks/useEndeavour";
+import { MENU_ITEMS, NAVIGATION, defaultTheme } from "./hooks/useConfig";
 
 const createMenuItem = ({ path, label, icon }) => ({
   key: path,
